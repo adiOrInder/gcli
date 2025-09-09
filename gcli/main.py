@@ -18,7 +18,6 @@ except ImportError:
     print("❌ Descope not installed. Run: pip install descope")
     sys.exit(1)
 
-
 try:
     import requests
 except ImportError:
