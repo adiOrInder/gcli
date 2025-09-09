@@ -63,7 +63,6 @@ class GitHubCLI:
                 json.dump(self.config, f, indent=2)
         except Exception as e:
             print(f"Error saving config: {e}")
-    
     def init_descope_client(self):
         try:
             if not self.descope_project_id or not self.descope_management_key:
