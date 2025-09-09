@@ -1,7 +1,7 @@
 [project]
 name = "gcli"
 version = "0.1.0"
-description = "gcli"
+description = "GCLI is a command-line tool designed to streamline your GitHub workflow. It combines secure authentication via Descope with a local AI model (via Ollama) to automatically generate conventional commit messages, helping you work faster and more efficiently."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
