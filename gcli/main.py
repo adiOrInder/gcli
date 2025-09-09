@@ -12,7 +12,6 @@ try:
 except ImportError:
     print("❌ PyGithub not installed. Run: pip install PyGithub")
     sys.exit(1)
-
 try:
     from descope import DescopeClient
 except ImportError:
