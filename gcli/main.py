@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import Optional, Dict, Any
 from getpass import getpass
 from descope import DeliveryMethod
-
 try:
     from github import Github, GithubException
 except ImportError:
