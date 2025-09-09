@@ -70,7 +70,6 @@ class GitHubCLI:
                 print("Please set them using 'gcli config --project-id ...' or environment variables.")
                 self.descope_client = None
                 return
-
             self.descope_client = DescopeClient(
                 project_id=self.descope_project_id,
                 management_key=self.descope_management_key
