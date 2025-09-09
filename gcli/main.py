@@ -3,7 +3,6 @@ import sys
 import argparse
 import subprocess
 import json
-
 from pathlib import Path
 from typing import Optional, Dict, Any
 from getpass import getpass
