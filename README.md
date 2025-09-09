@@ -3,6 +3,7 @@
 GCLI is a command-line tool designed to streamline your GitHub workflow. It combines secure authentication via Descope with a local AI model (via Ollama) to automatically generate conventional commit messages, helping you work faster and more efficiently.
 
 ## Table of Contents
+
 - [Why GCLI?](#why-gcli)
 - [Features](#features)
 - [Installation](#installation)
@@ -30,14 +31,14 @@ In a typical Git workflow, context-switching is common: you write code, stage fi
 
 ## Features
 
-| Feature                 | Description                                                                                             |
-| ----------------------- | ------------------------------------------------------------------------------------------------------- |
+| Feature                   | Description                                                                                             |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
 | **Secure Authentication** | Log in securely using Descope with OTP or Magic Links.                                                  |
-| **AI-Powered Commits**  | Automatically generate conventional commit messages from your staged changes with `gcli commit --auto`.   |
-| **Intelligent Fallback**| If the local AI is unavailable, a rule-based fallback creates a sensible commit message.                |
-| **Repo Management**     | Initialize local and remote GitHub repositories with a single `init` command.                             |
-| **Status Dashboard**    | Get a quick overview of your authentication and repository status with `gcli status`.                     |
-| **Issue Viewer**        | Quickly view open issues for any public repository directly in your terminal.                           |
+| **AI-Powered Commits**    | Automatically generate conventional commit messages from your staged changes with `gcli commit --auto`. |
+| **Intelligent Fallback**  | If the local AI is unavailable, a rule-based fallback creates a sensible commit message.                |
+| **Repo Management**       | Initialize local and remote GitHub repositories with a single `init` command.                           |
+| **Status Dashboard**      | Get a quick overview of your authentication and repository status with `gcli status`.                   |
+| **Issue Viewer**          | Quickly view open issues for any public repository directly in your terminal.                           |
 
 ---
 
@@ -45,7 +46,7 @@ In a typical Git workflow, context-switching is common: you write code, stage fi
 
 ### Prerequisites
 
-- Python 3.6+
+- Python 3.11+
 - Git installed on your system.
 - (Optional but recommended) Ollama installed and running for AI features.
 
@@ -56,6 +57,7 @@ In a typical Git workflow, context-switching is common: you write code, stage fi
 
 2.  **Install the package:**
     Navigate to the root directory (where `setup.py` is located) and run the following command. The `.` installs the package from the current directory in "editable" mode (`-e`), which is great for development.
+
     ```bash
     pip install -e .
     ```
@@ -73,12 +75,14 @@ In a typical Git workflow, context-switching is common: you write code, stage fi
 For the AI commit feature, you need to have a local Ollama model running.
 
 1.  **Start the Ollama server:**
+
     ```bash
     ollama serve
     ```
 
 2.  **Pull a model:**
     A small, fast model is recommended for quick commit message generation.
+
     ```bash
     ollama pull llama3.2:1b
     ```
@@ -98,40 +102,45 @@ For the AI commit feature, you need to have a local Ollama model running.
 ### 1. Authenticate
 
 First, link your Descope and GitHub accounts. This is a one-time setup.
+
 ```bash
 gcli auth
 ```
+
 Follow the on-screen prompts to authenticate via your email.
 
 ### 2. Initialize a Repository
 
 Create a new repository on GitHub and set it as the remote for your local directory.
 
--   **Create a public repo:**
-    ```bash
-    gcli init my-new-project --description "This is my awesome new project."
-    ```
+- **Create a public repo:**
 
--   **Create a private repo:**
-    ```bash
-    gcli init my-secret-project --private
-    ```
+  ```bash
+  gcli init my-new-project --description "This is my awesome new project."
+  ```
+
+- **Create a private repo:**
+  ```bash
+  gcli init my-secret-project --private
+  ```
 
 ### 3. Commit Changes
 
 Use the `--auto` flag to generate a commit message automatically. GCLI will show you the generated message and ask for confirmation before committing.
 
--   **Stage your files:**
-    ```bash
-    git add .
-    ```
+- **Stage your files:**
 
--   **Generate a commit message and push:**
-    ```bash
-    gcli commit --auto
-    ```
+  ```bash
+  git add .
+  ```
+
+- **Generate a commit message and push:**
+  ```bash
+  gcli commit --auto
+  ```
 
 You can also provide a message manually, just like with `git commit`:
+
 ```bash
 gcli commit "feat: add user login form"
 ```
@@ -139,6 +148,7 @@ gcli commit "feat: add user login form"
 ### 4. Check Status
 
 View your current authentication and repository status.
+
 ```bash
 gcli status
 ```
@@ -146,6 +156,7 @@ gcli status
 ### 5. View Issues
 
 Check the latest issues for any public GitHub repository.
+
 ```bash
 gcli issue PyGithub/PyGithub --limit 5 --label "bug"
 ```
